@@ -7,8 +7,10 @@ module RakutenWebService
     end
 
     def self.for(response)
-      error_class = repository[response.code.to_i]
-      error_class.new(JSON.parse(response.body)['error_description'])
+      error_class = repository[response.code.to_i] || Error
+      body = JSON.parse(response.body)
+      message = body['error_description'] || body.dig('errors', 'errorMessage')
+      error_class.new(message)
     end
 
     def self.repository
@@ -18,6 +20,9 @@ module RakutenWebService
 
   class WrongParameter < Error; end
   Error.register(400, WrongParameter)
+
+  class Forbidden < Error; end
+  Error.register(403, Forbidden)
 
   class NotFound < Error; end
   Error.register(404, NotFound)
