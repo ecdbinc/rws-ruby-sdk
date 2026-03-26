@@ -4,11 +4,12 @@ require 'rakuten_web_service/string_support'
 
 module RakutenWebService
   class Configuration
-    attr_accessor :application_id, :affiliate_id, :max_retries, :debug
+    attr_accessor :application_id, :affiliate_id, :access_key, :max_retries, :debug
 
     def initialize
       @application_id = ENV['RWS_APPLICATION_ID']
       @affiliate_id = ENV['RWS_AFFILIATE_ID']
+      @access_key = ENV['RWS_ACCESS_KEY']
       @max_retries = 5
     end
 
@@ -18,7 +19,7 @@ module RakutenWebService
 
     def default_parameters
       raise 'Application ID is not defined' unless has_required_options?
-      { application_id: application_id, affiliate_id: affiliate_id, format_version: '2' }
+      { application_id: application_id, affiliate_id: affiliate_id, access_key: access_key, format_version: '2' }
     end
 
     def has_required_options?
