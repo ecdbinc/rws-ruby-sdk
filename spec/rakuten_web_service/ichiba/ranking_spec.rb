@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rakuten_web_service/ichiba/ranking'
 
 describe RakutenWebService::Ichiba::RankingItem do
-  let(:endpoint) { 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Ranking/20260401' }
+  let(:endpoint) { 'https://openapi.rakuten.co.jp/ichibaranking/api/IchibaItem/Ranking/20220601' }
   let(:affiliate_id) { 'affiliate_id' }
   let(:application_id) { 'application_id' }
   let(:expected_query) do
