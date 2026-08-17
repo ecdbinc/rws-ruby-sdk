@@ -2,14 +2,13 @@ if ENV['CI']
   require 'simplecov'
 
   SimpleCov.start do
-    add_filter "/spec/"
+    skip "/spec/"
   end
 end
 
 require File.expand_path(File.join(__dir__, '..', 'lib', 'rakuten_web_service'))
 
 require 'webmock/rspec'
-require 'tapp'
 
 Dir[File.expand_path(File.join(__dir__, "support/**/*.rb"))].each { |f| require f }
 
@@ -18,7 +17,7 @@ RSpec.configure do |config|
   config.filter_run_excluding type: 'integration' if ENV['INTEGRATION'] != 'yes'
 
   config.before :suite do
-    WebMock.disable_net_connect!(allow: "codeclimate.com")
+    WebMock.disable_net_connect!
   end
 
   config.before :all, type: 'integration' do
