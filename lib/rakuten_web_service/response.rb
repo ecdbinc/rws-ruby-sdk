@@ -32,7 +32,7 @@ module RakutenWebService
 
     def genre_information
       return unless @resource_class.respond_to?(:genre_class)
-      return if self['GenreInformation'].empty?
+      return if Array(self['GenreInformation']).empty?
 
       RWS::GenreInformation.new(self['GenreInformation'][0], @resource_class.genre_class)
     end

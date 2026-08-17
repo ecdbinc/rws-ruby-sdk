@@ -2,6 +2,44 @@ require 'spec_helper'
 
 describe RakutenWebService::Response do
 
+  describe "#genre_information" do
+    subject { RakutenWebService::Response.new(RWS::Ichiba::Item, json).genre_information }
+
+    context "When the response has no GenreInformation key" do
+      let(:json) { {} }
+
+      it { is_expected.to be_nil }
+    end
+
+    context "When GenreInformation is empty" do
+      let(:json) { { 'GenreInformation' => [] } }
+
+      it { is_expected.to be_nil }
+    end
+
+    context "When GenreInformation is given" do
+      let(:json) do
+        {
+          'GenreInformation' => [
+            {
+              'ancestors' => [],
+              'genre' => { 'genreId' => 100316, 'nameJa' => '水・ソフトドリンク', 'level' => 1, 'itemCount' => 9588 },
+              'children' => [
+                { 'genreId' => 201351, 'nameJa' => '水・炭酸水', 'level' => 2, 'itemCount' => 192 }
+              ]
+            }
+          ]
+        }
+      end
+
+      it { is_expected.to be_a(RakutenWebService::GenreInformation) }
+
+      specify "its children keep itemCount in params" do
+        expect(subject.children.first['itemCount']).to eq(192)
+      end
+    end
+  end
+
   describe "Pagenate helpers" do
     let(:resource_class) { double(:resource_class) }
 
