@@ -15,7 +15,7 @@ module RakutenWebService
         end
       end
 
-      endpoint 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401'
+      endpoint 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701'
 
       parser do |response|
         (response['Items'] || []).map { |item| Item.new(item) }
