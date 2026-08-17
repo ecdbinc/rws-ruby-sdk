@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe RakutenWebService::Ichiba::Genre do
-  let(:endpoint) { 'https://openapi.rakuten.co.jp/ichibams/api/IchibaGenre/Search/20140222' }
+  let(:endpoint) { 'https://openapi.rakuten.co.jp/ichibagt/api/IchibaGenre/Search/20260701' }
   let(:affiliate_id) { 'dummy_affiliate_id' }
   let(:application_id) { 'dummy_application_id' }
   let(:genre_id) { 0 }
@@ -41,13 +41,13 @@ describe RakutenWebService::Ichiba::Genre do
       expect(@expected_request).to have_been_made.once
     end
     specify 'should be access by key' do
-      expect(subject['genreName']).to eq(expected_json['current']['genreName'])
-      expect(subject['genre_name']).to eq(expected_json['current']['genreName'])
+      expect(subject['nameJa']).to eq(expected_json['genre']['nameJa'])
+      expect(subject['name_ja']).to eq(expected_json['genre']['nameJa'])
     end
 
     describe '#name' do
       subject { super().name }
-      it { is_expected.to eq(expected_json['current']['genreName']) }
+      it { is_expected.to eq(expected_json['genre']['nameJa']) }
     end
   end
 
@@ -69,8 +69,8 @@ describe RakutenWebService::Ichiba::Genre do
           expect(@expected_request).to_not have_been_made.twice
         end
         specify 'should be access by key' do
-          expect(subject['genreName']).to eq(expected_json['current']['genreName'])
-          expect(subject['genre_name']).to eq(expected_json['current']['genreName'])
+          expect(subject['nameJa']).to eq(expected_json['genre']['nameJa'])
+          expect(subject['name_ja']).to eq(expected_json['genre']['nameJa'])
         end
       end
 
@@ -84,10 +84,10 @@ describe RakutenWebService::Ichiba::Genre do
               formatVersion: '2',
               genreId: new_genre_id }).
             to_return(body: {
-              current: {
+              genre: {
                 genreId: new_genre_id,
-                genreName: 'DummyGenre',
-                genreLevel: 3
+                nameJa: 'DummyGenre',
+                level: 3
               }
               }.to_json)
 
@@ -132,7 +132,7 @@ describe RakutenWebService::Ichiba::Genre do
             formatVersion: '2',
             genreId: target_genre['genreId']
           }).to_return(body: {
-            current: target_genre,
+            genre: target_genre,
             children: []
           }.to_json)
       end

@@ -7,16 +7,14 @@ describe RakutenWebService::GenreInformation do
     context "When given params only has children genres" do
       let(:expected_params) do
         {
-          "parent" => [],
-          "current" => [],
+          "ancestors" => [],
+          "genre" => nil,
           "children" => [
             {
-              "child" => {
-                "genreId" => "564500",
-                "genreName" => "光回線・モバイル通信",
-                "itemCount" => "5",
-                "genreLevel" => "1"
-              }
+              "genreId" => 565004,
+              "nameJa" => "光回線・モバイル通信",
+              "level" => 1,
+              "itemCount" => 5
             }
           ]
         }
@@ -37,36 +35,32 @@ describe RakutenWebService::GenreInformation do
         subject { super().children.first }
 
         it "has genre id" do
-          expect(subject.id).to eq('564500')
+          expect(subject.id).to eq(565004)
         end
         it "has genre name" do
           expect(subject.name).to eq('光回線・モバイル通信')
         end
         it "has its genre level" do
-          expect(subject.level).to eq('1')
-        end
-        it "has its item count" do
-          expect(subject.item_count).to eq('5')
+          expect(subject.level).to eq(1)
         end
       end
     end
     context "When given params has current genre" do
       let(:expected_params) do
         {
-          "parent" => [],
-          "current" => [
-            {
-              "genreId" => "564500",
-              "genreName" => "スマートフォン・タブレット",
-              "itemCount" => "313045",
-              "genreLevel" => "1"
-            }
-          ],
-          "children" => [
-          ]
+          "ancestors" => [],
+          "genre" => {
+            "genreId" => 564500,
+            "nameJa" => "スマートフォン・タブレット",
+            "level" => 1,
+            "itemCount" => 313045
+          },
+          "children" => []
         }
       end
-specify "its parent should be nil" do expect(subject.parent).to be_nil
+
+      specify "its parent should be nil" do
+        expect(subject.parent).to be_nil
       end
       specify "its current should be a Genre object" do
         expect(subject.current).to be_a(RWS::Ichiba::Genre)
@@ -78,24 +72,21 @@ specify "its parent should be nil" do expect(subject.parent).to be_nil
     context "When given params has parent genre" do
       let(:expected_params) do
         {
-          "parent" => [
+          "ancestors" => [
             {
-              "genreId" => "564500",
-              "genreName" => "スマートフォン・タブレット",
-              "itemCount" => "313045",
-              "genreLevel" => "1"
+              "genreId" => 564500,
+              "nameJa" => "スマートフォン・タブレット",
+              "level" => 1,
+              "itemCount" => 313045
             }
           ],
-          "current" => [
-            {
-              "genreId" => "560029",
-              "genreName" => "タブレットPC本体",
-              "itemCount" => "0",
-              "genreLevel" => "2"
-            }
-          ],
-          "children" => [
-          ]
+          "genre" => {
+            "genreId" => 560029,
+            "nameJa" => "タブレットPC本体",
+            "level" => 2,
+            "itemCount" => 0
+          },
+          "children" => []
         }
       end
 
@@ -107,18 +98,6 @@ specify "its parent should be nil" do expect(subject.parent).to be_nil
       end
       specify "its children should be empty" do
         expect(subject.children).to be_empty
-      end
-
-      context "After re-initialize Genre with same genre id" do
-        let(:genre) { RWS::Ichiba::Genre.new('560029') }
-
-        before do
-          subject.current
-        end
-
-        it "doesn't have item_count value" do
-          expect(genre.item_count).to be_nil
-        end
       end
     end
   end

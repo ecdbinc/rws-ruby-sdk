@@ -19,7 +19,9 @@ module RakutenWebService
 
     def default_parameters
       raise 'Application ID is not defined' unless has_required_options?
+      # 未設定のものは送らない (nil を残すと `?accessKey&...` のような空パラメータになる)
       { application_id: application_id, affiliate_id: affiliate_id, access_key: access_key, format_version: '2' }
+        .reject { |_, value| value.nil? || value == '' }
     end
 
     def has_required_options?

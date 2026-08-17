@@ -1393,224 +1393,133 @@
   ],
   "GenreInformation": [
     {
-      "parent": [],
-      "current": [],
+      "ancestors": [],
+      "genre": {
+        "genreId": 100316,
+        "nameJa": "水・ソフトドリンク",
+        "level": 1,
+        "itemCount": 9588
+      },
       "children": [
         {
-          "genreId": "101240",
-          "genreName": "CD・DVD・楽器",
-          "itemCount": "2300",
-          "genreLevel": "1"
+          "genreId": 201351,
+          "nameJa": "水・炭酸水",
+          "level": 2,
+          "itemCount": 192
         },
         {
-          "genreId": "100804",
-          "genreName": "インテリア・寝具・収納",
-          "itemCount": "629",
-          "genreLevel": "1"
+          "genreId": 506536,
+          "nameJa": "炭酸飲料",
+          "level": 2,
+          "itemCount": 214
         },
         {
-          "genreId": "101164",
-          "genreName": "おもちゃ・ホビー・ゲーム",
-          "itemCount": "4047",
-          "genreLevel": "1"
+          "genreId": 559936,
+          "nameJa": "スポーツドリンク",
+          "level": 2,
+          "itemCount": 355
         },
         {
-          "genreId": "100533",
-          "genreName": "キッズ・ベビー・マタニティ",
-          "itemCount": "1966",
-          "genreLevel": "1"
+          "genreId": 110692,
+          "nameJa": "野菜・果実飲料",
+          "level": 2,
+          "itemCount": 405
         },
         {
-          "genreId": "215783",
-          "genreName": "日用品雑貨・文房具・手芸",
-          "itemCount": "3014",
-          "genreLevel": "1"
+          "genreId": 567677,
+          "nameJa": "スムージー",
+          "level": 2,
+          "itemCount": 4
         },
         {
-          "genreId": "216129",
-          "genreName": "ジュエリー・アクセサリー",
-          "itemCount": "37550",
-          "genreLevel": "1"
+          "genreId": 201393,
+          "nameJa": "お酢飲料",
+          "level": 2,
+          "itemCount": 156
         },
         {
-          "genreId": "101070",
-          "genreName": "スポーツ・アウトドア",
-          "itemCount": "1869",
-          "genreLevel": "1"
+          "genreId": 100356,
+          "nameJa": "コーヒー",
+          "level": 2,
+          "itemCount": 1990
         },
         {
-          "genreId": "100938",
-          "genreName": "ダイエット・健康",
-          "itemCount": "166",
-          "genreLevel": "1"
+          "genreId": 502134,
+          "nameJa": "ココア・チョコレートドリンク",
+          "level": 2,
+          "itemCount": 25
         },
         {
-          "genreId": "100316",
-          "genreName": "水・ソフトドリンク",
-          "itemCount": "120",
-          "genreLevel": "1"
+          "genreId": 100265,
+          "nameJa": "牛乳",
+          "level": 2,
+          "itemCount": 19
         },
         {
-          "genreId": "100026",
-          "genreName": "パソコン・周辺機器",
-          "itemCount": "371",
-          "genreLevel": "1"
+          "genreId": 567678,
+          "nameJa": "植物性ミルク",
+          "level": 2,
+          "itemCount": 92
         },
         {
-          "genreId": "216131",
-          "genreName": "バッグ・小物・ブランド雑貨",
-          "itemCount": "2317",
-          "genreLevel": "1"
+          "genreId": 567679,
+          "nameJa": "フルーツ入り乳飲料",
+          "level": 2,
+          "itemCount": 24
         },
         {
-          "genreId": "100371",
-          "genreName": "レディースファッション",
-          "itemCount": "2167",
-          "genreLevel": "1"
+          "genreId": 302992,
+          "nameJa": "乳性・乳酸菌飲料",
+          "level": 2,
+          "itemCount": 59
         },
         {
-          "genreId": "100005",
-          "genreName": "花・ガーデン・DIY",
-          "itemCount": "1601",
-          "genreLevel": "1"
+          "genreId": 565598,
+          "nameJa": "お茶・紅茶",
+          "level": 2,
+          "itemCount": 5478
         },
         {
-          "genreId": "101213",
-          "genreName": "ペット・ペットグッズ",
-          "itemCount": "272",
-          "genreLevel": "1"
+          "genreId": 566805,
+          "nameJa": "柚子茶",
+          "level": 2,
+          "itemCount": 2
         },
         {
-          "genreId": "211742",
-          "genreName": "TV・オーディオ・カメラ",
-          "itemCount": "262",
-          "genreLevel": "1"
+          "genreId": 566734,
+          "nameJa": "生姜湯",
+          "level": 2,
+          "itemCount": 74
         },
         {
-          "genreId": "101114",
-          "genreName": "車・バイク",
-          "itemCount": "3",
-          "genreLevel": "1"
+          "genreId": 565597,
+          "nameJa": "甘酒",
+          "level": 2,
+          "itemCount": 57
         },
         {
-          "genreId": "100227",
-          "genreName": "食品",
-          "itemCount": "189",
-          "genreLevel": "1"
+          "genreId": 559939,
+          "nameJa": "ゼリー飲料",
+          "level": 2,
+          "itemCount": 222
         },
         {
-          "genreId": "100939",
-          "genreName": "美容・コスメ・香水",
-          "itemCount": "1494",
-          "genreLevel": "1"
+          "genreId": 565599,
+          "nameJa": "希釈用ドリンク",
+          "level": 2,
+          "itemCount": 53
         },
         {
-          "genreId": "200162",
-          "genreName": "本・雑誌・コミック",
-          "itemCount": "13762",
-          "genreLevel": "1"
+          "genreId": 568781,
+          "nameJa": "氷",
+          "level": 2,
+          "itemCount": 0
         },
         {
-          "genreId": "101381",
-          "genreName": "旅行・出張・チケット",
-          "itemCount": "4",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "101438",
-          "genreName": "学び・サービス・保険",
-          "itemCount": "15",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "100000",
-          "genreName": "百貨店・総合通販・ギフト",
-          "itemCount": "0",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "402853",
-          "genreName": "デジタルコンテンツ",
-          "itemCount": "237",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "503190",
-          "genreName": "車用品・バイク用品",
-          "itemCount": "555",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "100433",
-          "genreName": "インナー・下着・ナイトウエア",
-          "itemCount": "181",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "510901",
-          "genreName": "日本酒・焼酎",
-          "itemCount": "3",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "510915",
-          "genreName": "ビール・洋酒",
-          "itemCount": "244",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "551167",
-          "genreName": "スイーツ・お菓子",
-          "itemCount": "79",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "551169",
-          "genreName": "医薬品・コンタクト・介護",
-          "itemCount": "681",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "551177",
-          "genreName": "メンズファッション",
-          "itemCount": "370",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "558885",
-          "genreName": "靴",
-          "itemCount": "732",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "558929",
-          "genreName": "腕時計",
-          "itemCount": "328",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "558944",
-          "genreName": "キッチン用品・食器・調理器具",
-          "itemCount": "2528",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "562637",
-          "genreName": "家電",
-          "itemCount": "1530",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "564500",
-          "genreName": "スマートフォン・タブレット",
-          "itemCount": "3338",
-          "genreLevel": "1"
-        },
-        {
-          "genreId": "565004",
-          "genreName": "光回線・モバイル通信",
-          "itemCount": "6",
-          "genreLevel": "1"
+          "genreId": 101785,
+          "nameJa": "その他",
+          "level": 2,
+          "itemCount": 167
         }
       ]
     }
